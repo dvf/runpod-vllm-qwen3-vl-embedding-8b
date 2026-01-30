@@ -44,11 +44,11 @@ class VLLMConfig:
         # Mode-specific defaults (grounded in vLLM docs for pooling models / Qwen3-VL embedding & reranker)
         # Embedding models: `--runner pooling` and use /v1/embeddings.
         if self.mode == "embed":
-            cmd += ["--runner", "pooling", "--task", "embed"]
+            cmd += ["--runner", "pooling"]
 
         # Reranker: pooling runner + overrides + template + /v1/rerank.
         if self.mode == "rerank":
-            cmd += ["--runner", "pooling", "--task", "score"]
+            cmd += ["--runner", "pooling"]
             # defaults as per vLLM guidance for Qwen3-VL-Reranker-8B
             if self.max_model_len is None:
                 cmd += ["--max-model-len", "4096"]
