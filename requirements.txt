@@ -1,0 +1,16 @@
+# RunPod serverless SDK
+runpod>=1.7.0
+
+# vLLM + OpenAI-compatible server
+vllm>=0.14.0
+
+# Qwen3-VL models need a new enough Transformers to recognize qwen3_vl architecture
+transformers>=4.57.0
+accelerate>=0.30.0
+safetensors>=0.4.3
+
+# Qwen-VL utility library recommended by vLLM recipe (useful esp. offline/processing)
+qwen-vl-utils==0.0.14
+
+# Used by handler to call local vLLM HTTP server
+requests>=2.31.0
